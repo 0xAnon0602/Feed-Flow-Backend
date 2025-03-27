@@ -111,35 +111,51 @@ def predict_for_new_input(input_data):
 
 # Example usage:
 # Define new input values
-new_input = {
-    'Feed Flow (m3/hr)': 100.0,
-    'Feed Temperature': 25.0,
-    'Feed water pH': 7.5,
-    'Pass Stage': 1,
-    'Pressure Vessel': 6,
-    'Elements': 6,
-    'Element age(years)': 2.5,
-    'Recovery(%)': 75.0,
-    # Add all other required input features
-    'Ca_FW': 80.0,
-    'Mg_FW': 30.0,
-    # ... complete with all other required features
-    'Feed Water TDS': 500.0,
-    'CaSO4 / ksp * 100, %_FW': 10.0,
-    'SrSO4 / ksp * 100, %_FW': 5.0,
-    'BaSO4 / ksp * 100, %_FW': 2.0,
-    'SiO2 saturation, %_FW': 15.0,
-    'CaF2 / ksp * 100, %_FW': 3.0
-}
+# new_input = {
+#     'Feed Flow (m3/hr)': 100.0,
+#     'Feed Temperature': 25.0,
+#     'Feed water pH': 7.5,
+#     'Pass Stage': 1,
+#     'Pressure Vessel': 6,
+#     'Elements': 6,
+#     'Element age(years)': 2.5,
+#     'Recovery(%)': 75.0,
+#     'Ca_FW': 80.0,
+#     'Mg_FW': 30.0,
+#     'Na_FW': 120.0,
+#     'K_FW': 10.0,
+#     'NH4_FW': 0.5,
+#     'Ba_FW': 0.05,
+#     'Sr_FW': 0.8,
+#     'H_FW': 0.01,
+#     'CO3_FW': 5.0,
+#     'HCO3_FW': 150.0,
+#     'SO4_FW': 90.0,
+#     'Cl_FW': 130.0,
+#     'F_FW': 1.0,
+#     'NO3_FW': 5.0,
+#     'PO4_FW': 2.0,
+#     'OH_FW': 0.01,
+#     'SiO2_FW': 20.0,
+#     'B_FW': 0.5,
+#     'CO2_FW': 5.0,
+#     'NH3_FW': 0.2,
+#     'Feed Water TDS': 500.0,
+#     'CaSO4 / ksp * 100, %_FW': 10.0,
+#     'SrSO4 / ksp * 100, %_FW': 5.0,
+#     'BaSO4 / ksp * 100, %_FW': 2.0,
+#     'SiO2 saturation, %_FW': 15.0,
+#     'CaF2 / ksp * 100, %_FW': 3.0
+# }
 
-# Make prediction
-try:
-    predictions = predict_for_new_input(new_input)
+# # Make prediction
+# try:
+#     predictions = predict_for_new_input(new_input)
     
-    print("\nPredictions for new input data:")
-    for output_name, predicted_value in predictions.items():
-        print(f"{output_name}: {predicted_value:.4f}")
+#     print("\nPredictions for new input data:")
+#     for output_name, predicted_value in predictions.items():
+#         print(f"{output_name}: {predicted_value:.4f}")
         
-except ValueError as e:
-    print(f"Error: {e}")
-    print("Please provide values for all required input features.")
+# except ValueError as e:
+#     print(f"Error: {e}")
+#     print("Please provide values for all required input features.")
