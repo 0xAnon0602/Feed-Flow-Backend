@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import numpy as np
 from flask_cors import CORS  # Import CORS
-from mainLogic import predict_for_new_input
+from mainLogic import predict_from_user_input
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -31,7 +31,7 @@ def predict():
             return jsonify({"error": "No input data provided"}), 400
         
         # Make prediction using the function from mainLogic.py
-        predictions = predict_for_new_input(input_data)
+        predictions = predict_from_user_input(input_data)
         
         # Return predictions as JSON
         return jsonify({
