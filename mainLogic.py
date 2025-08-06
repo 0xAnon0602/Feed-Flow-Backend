@@ -25,8 +25,9 @@ def train_model(file_path):
                     'CaF2 / ksp * 100, %_C']]
     
     # Remove columns with zero variance (columns with only one unique value)
-    low_variance_columns = [col for col in Y.columns if Y[col].nunique() <= 1]
-    Y = Y.drop(columns=low_variance_columns)
+    # Commented out to ensure all output parameters are included
+    # low_variance_columns = [col for col in Y.columns if Y[col].nunique() <= 1]
+    # Y = Y.drop(columns=low_variance_columns)
     
     # Train-Test Split
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
@@ -154,4 +155,4 @@ if __name__ == "__main__":
     if choice == '2' or choice == '3':
         if choice == '3':
             print("\nNow proceeding to prediction...")
-        predict_from_user_input(model, x_scaler, y_scaler, X.columns, Y.columns)
+        predict_from_user_input()
