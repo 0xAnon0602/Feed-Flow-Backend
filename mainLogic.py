@@ -122,6 +122,37 @@ def predict_from_user_input(input_data=None, file_path="Training_Data.csv"):
     # Create a dictionary of predictions
     prediction_dict = {col: float(predicted[0][i]) for i, col in enumerate(Y_columns)}
     
+    # Define mapping between input ions and their corresponding output ions
+    ion_mapping = {
+        'Ca_FW': ['Ca_P', 'Ca_C'],
+        'Mg_FW': ['Mg_P', 'Mg_C'],
+        'Na_FW': ['Na_P', 'Na_C'],
+        'K_FW': ['K_P', 'K_C'],
+        'NH4_FW': ['NH4_P', 'NH4_C'],
+        'Ba_FW': ['Ba_P', 'Ba_C'],
+        'Sr_FW': ['Sr_P', 'Sr_C'],
+        'H_FW': ['H_P', 'H_C'],
+        'CO3_FW': ['CO3_P', 'CO3_C'],
+        'HCO3_FW': ['HCO3_P', 'HCO3_C'],
+        'SO4_FW': ['SO4_P', 'SO4_C'],
+        'Cl_FW': ['Cl_P', 'Cl_C'],
+        'F_FW': ['F_P', 'F_C'],
+        'NO3_FW': ['NO3_P', 'NO3_C'],
+        'PO4_FW': ['PO4_P', 'PO4_C'],
+        'OH_FW': ['OH_P', 'OH_C'],
+        'SiO2_FW': ['SiO2_P', 'SiO2_C'],
+        'B_FW': ['B_P', 'B_C'],
+        'CO2_FW': ['CO2_P', 'CO2_C'],
+        'NH3_FW': ['NH3_P', 'NH3_C']
+    }
+    
+    # Check if any input ion concentration is 0 and set corresponding output ions to 0
+    for input_ion, output_ions in ion_mapping.items():
+        if input_ion in user_input and user_input[input_ion] == 0:
+            for output_ion in output_ions:
+                if output_ion in prediction_dict:
+                    prediction_dict[output_ion] = 0.0
+    
     # If running in interactive mode, display results
     if input_data is None:
         print("\nPredicted values:")
