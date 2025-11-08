@@ -16,7 +16,7 @@ def train_model(file_path):
           'NO3_FW', 'PO4_FW', 'OH_FW', 'SiO2_FW', 'B_FW', 'CO2_FW', 'NH3_FW', 'Feed Water TDS','CaSO4 / ksp * 100, %_FW','SrSO4 / ksp * 100, %_FW','BaSO4 / ksp * 100, %_FW','SiO2 saturation, %_FW','CaF2 / ksp * 100, %_FW'
          ]]
     
-    Y = data[['Feed Pressure(bar)','Specific Energy(kwh/m3)','Flux(lmh)','Ca_P', 'Mg_P', 'Na_P', 'K_P', 'NH4_P', 'Ba_P', 'Sr_P', 'H_P', 'CO3_P', 'HCO3_P',
+    Y = data[['Feed Pressure(bar)','Total Power Consumption(KW)','Flux(lmh)','Ca_P', 'Mg_P', 'Na_P', 'K_P', 'NH4_P', 'Ba_P', 'Sr_P', 'H_P', 'CO3_P', 'HCO3_P',
                     'SO4_P', 'Cl_P', 'F_P', 'NO3_P', 'PO4_P', 'OH_P', 'SiO2_P', 'B_P', 'CO2_P', 'NH3_P',
                     'Permeate TDS', 'Ca_C', 'Mg_C', 'Na_C', 'K_C', 'NH4_C', 'Ba_C', 'Sr_C', 'H_C',
                     'CO3_C', 'HCO3_C', 'SO4_C', 'Cl_C', 'F_C', 'NO3_C', 'PO4_C', 'OH_C', 'SiO2_C',
